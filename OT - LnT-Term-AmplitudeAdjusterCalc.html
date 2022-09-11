@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>OT BoK</title>
+</head>
+
+<!-- ################################################### -->
+<!-- Style Sheet for MathJax. -->
+<script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+
+ <!-- ################################################### -->
+<!-- Style Sheet for Horizontal Rule - Style 1                                        -->
+<style>
+    hr.style1 {
+        border: 0;
+        height: 3px;
+        background-image: linear-gradient(to right,
+            rgba(0, 0, 0, 0),
+            rgba(0, 0, 255, 0.75),
+            rgba(0, 0, 0, 0));
+    }
+</style>
+
+<!-- ################################################### -->
+<!-- Style Sheet for Horizontal Rule - Style 2                                        -->
+<style>
+    hr.style2 {
+        border: 0;
+        height: 5px;
+        color: #333;
+        background-color: #333;
+    }
+</style>
+
+<!-- ################################################### -->
+<!-- Get the values needed -->
+<script>
+function calcValues()    {
+	var fmmInch = 0.0393701;
+	var x = document.getElementById("frm1");
+
+    // ###################################################
+	// Get the Headstock Lever Arm Length
+	//
+	fHSLAL = Number(x.elements[0].value);
+			
+	// ###################################################
+	// Get the AA lever Arm Length
+	//
+	fAALAL = Number(x.elements[1].value);
+
+    // ###################################################
+	// Get the Desired Amplitude Adjustment
+	//
+	fAA = Number(x.elements[2].value);
+
+	// ###################################################
+	// Calculate the Values
+	//
+	var fHSLALImp = fHSLAL;
+	var fHSLALmm = fHSLAL / fmmInch;
+    document.getElementById("HSLALmm").innerHTML = fHSLALmm.toFixed(1);
+
+	var fAALALImp = fAALAL;
+    var fAALALmm = fAALAL / fmmInch;
+	document.getElementById("AALALmm").innerHTML = fAALALmm.toFixed(1);
+
+	var fAAPct = fAA / 100;
+	var fRDDImp = (fHSLALImp * fAALALImp * (1-fAAPct)) / (fHSLALImp - (fAALALImp * fAAPct));
+    document.getElementById("RDDImp").innerHTML = fRDDImp.toFixed(1);
+
+	var fRDDmm = fRDDImp / fmmInch;
+    document.getElementById("RDDmm").innerHTML = fRDDmm.toFixed(1);
+
+}
+</script>
+
+
+<!-- ################################################### -->
+<!-- Style Sheet for header image max size                                         -->
+<!-- ################################################### -->
+    <style>
+    img.Image { max-width: 1000px;}
+    </style>
+
+<!-- ################################################### -->
+<!-- Header                                                                                           -->
+<!-- ################################################### -->
+<body bgcolor=#E6E6E6>
+	<font face="Georgia">
+
+    <table width=100%>
+        <tr valign="TOP">
+            <td align="center">
+                <a href="index.html"><IMG SRC="Images/OTBoK Logo 2.png" width="100%" class="Image"></a>
+            </td>
+        </td>
+    </table>
+
+    <table width="100%" border=0>
+        <col width="10%">
+        <col width="*">
+        <col width="10%">
+
+        <tr valign="bottom">
+            <td align="left">
+                <a href = "javascript:history.back()"><img src="Images/BackButton.png" width="25px"></a>
+            </td>
+            <td align="center" valign="top">
+                <font face= "Georgia" size="6" color=#191970><b>
+                Calculator for Amplitude Adjuster
+                </b></font>
+            </td>
+            <td align="right">
+            </td>
+        </tr>
+    </table>
+    <hr>
+
+<!-- ################################################### -->
+<!-- Body                                                                                               -->
+<!-- ################################################### -->
+Calculations needed for using an <a href="https://otbok.info/OT%20-%20LnT-Term-AmplitudeAdjuster.html" target="_new">Amplitude Adjuster</a> are based on the data in the table below.
+
+</td></tr>
+<tr><td>
+
+<p>Input fields are <span style="background-color: #FFEE9C"><b>&nbsp;colored&nbsp;</b></span>.
+
+	<form id="frm1">
+		<table border="1" width="100%">
+			<col width="200px">
+
+        	<col width="60px">
+        	<col width="35px">
+
+        	<col width="60px">
+        	<col width="35px">
+
+        	<col width="*">
+
+			<tr bgcolor="Moccasin">
+				<td colspan="5">
+				    <font color="blue" size="4"><b>
+				        Fixed Values
+				    </b>
+				    </font>
+				</td>
+				<td colspan="999" align="right">
+				    <font color="blue" size="3">
+				    These are based on your machine
+				    </font>
+				</td>
+ 			</tr>
+
+			<tr bgcolor="LightGray">
+				<td>
+				    Headstock Lever Arm Length
+				</td>
+ 				<td align="Right">
+ 					<input 
+	 						type="number"
+ 							style="font-size:14px; text-align: right; width: 55px; background-color:#FFEE9C" 
+ 							name="HSLALImp" 
+							step='0.1' 
+							placeholder='0.0' 
+ 							value=12.0
+						/>
+ 				</td>
+				<td>
+					&quot;
+				</td>
+ 				<td align="Right">
+   			 		<p id="HSLALmm" style="margin: 0px; padding: 0px;"></p>
+ 				</td>
+				<td>
+					mm
+				</td>
+				<td>
+					Distance from the headstock's pivot point to the center of the spindle
+				</td>
+			</tr>
+
+			<tr bgcolor="LightGray">
+				<td>
+					Amplitude Adjuster Lever Arm Length
+				</td>
+ 				<td align="Right">
+ 					<input 
+	 						type="number"
+ 							style="font-size:14px; text-align: right; width: 55px; background-color:#FFEE9C" 
+ 							name="AALALImp" 
+							step='0.1' 
+							placeholder='0.0' 
+ 							value=8.0
+						/>
+				</td>
+				<td>
+					&quot;
+				</td>
+ 				<td align="Right">
+   			 		<p id="AALALmm" style="margin: 0px; padding: 0px;"></p>
+				</td>
+				<td>
+					mm
+				</td>
+				<td>
+					 Distance from the amplitude adjuster's pivot point to the center of the spindle
+				</td>
+			</tr>
+
+			<tr bgcolor="Moccasin">
+				<td colspan="5">
+				    <font color="blue" size="4"><b>
+				    Amplitude Adjustment
+				    </b></font>
+				</td>
+				<td colspan="999" align="right">
+				    <font color="blue" size="3">
+				    </font>
+				</td>
+ 			</tr>
+
+			<tr bgcolor="White">
+				<td>
+					Amplitude Adjustment
+				</td>
+ 				<td align="Right">
+ 					<input 
+	 						type="number"
+ 							style="font-size:14px; text-align: right; width: 55px; background-color:#FFEE9C" 
+ 							name="AA" 
+							step='0' 
+							placeholder='0' 
+ 							value=0
+						/>
+				</td>
+				<td>
+					%
+				</td>
+				<td colspan="2">
+				</td>
+
+				<td>
+				    At the given diameter, the resulting amplitude of cuts will be this percentage of the rosette's actual amplitude.
+				</td>
+			</tr>
+
+			<tr bgcolor="White">
+				<td>
+					Rubber Distance Down
+				</td>
+ 				<td align="Right">
+   			 		<p id="RDDImp" style="margin: 0px; padding: 0px;"></p>
+				</td>
+				<td>
+					&quot;
+				</td>
+ 				<td align="Right">
+   			 		<p id="RDDmm" style="margin: 0px; padding: 0px;"></p>
+				</td>
+				<td>
+					mm
+				</td>
+				<td>
+					The distance the rubber is adjusted down from the center of the spindle.  (This is the red rubber in the picture below.)
+					
+					<p style="margin-bottom: 0;"><font color="red">If this is a negative number, then the rubber needs to be raised above the spindle.</font>
+				</td>
+			</tr>
+
+		</table>
+	</form>
+
+    <p>
+	<center>
+	    <button autofocus type="button" onclick="calcValues()" style="font-size:20px; background-color: #0404B4; color: white;">
+		Calculate Estimated<br>Amplitude Adjustment
+	    </button>
+	</center>
+
+    <table width="100%">
+        <tr>
+            <td align="center">
+                <a href="ShowPicture.html?ImgNm=Images/AACalc.png" target="_new">
+                <img src="Images/AACalc.png" width="500px" />
+                </a>
+            </td>
+            <td alight="left" valign="top">
+                <p style="margin-top: 100px;">The AA Rubber (the blue one in the picture to the left) is aligned with the spindle axis.
+                
+                <p style="margin-top: 30px;">The Rubber (the red one in the picture to the left) is moved up or down to adjust the amplitude.
+                
+                <p>The amount that this rubber is set below the spindle axis is the measurement used above in the field, <b>Rubber Distance Down</b>.
+
+                <p style="margin-top: 50px;">The measurement for <b>Headstock Lever Arm Length</b> and <b>Amplitude Adjuster Lever Arm Length</b> remains fixed for the machine you are using. 
+
+                <p style="margin-bottom: 0;">The measurement for <b>Amplitude Adjuster Lever Arm Length</b> remains fixed for the amplitude adjuster you are using.  (If you have multiple AAs, use the measurements for the one you are using.) 
+
+
+
+
+
+<!-- ################################################### -->
+        </td></tr>
+        </tbody>
+      </table>
+    </font>
+
+<!-- ################################################### -->
+<!-- Footer                                                                                             -->
+<!-- ################################################### -->
+    <hr>
+    <font face= "Georgia" size="2">
+    <center><font face= "Georgia" size="3"><a href="index-About.html" target="iMain">About this site</a></center>
+
+    <font face= "Georgia" size="2">
+    <i><b>Disclaimer :  </b>eMail comments to me at <a href="mailto:OTBookOfKnowledge@gmail.com?Subject=OTBoK" target="_new">OTBookOfKnowledge @ Gmail.com</a>.  The process of woodturning involves the use of tools, machinery and materials which could cause injury or be a health hazard unless proper precautions are taken, including the wearing of appropriate protective equipment.
+
+    <p>Formulas are displayed on this page using <a href="https://www.mathjax.org/" target="_new">MathJax</a>.
+  </body>
+</html>

@@ -1,0 +1,939 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Open Rose Engine Lathe</title>
+</head>
+
+<!-- ################################################### -->
+<!-- Style Sheet for Horizontal Rule - Style 1                                        -->
+<style>
+    hr.style1 {
+        border: 0;
+        height: 3px;
+        background-image: linear-gradient(to right,
+            rgba(0, 0, 0, 0),
+            rgba(0, 0, 255, 0.75),
+            rgba(0, 0, 0, 0));
+    }
+</style>
+
+<!-- ################################################### -->
+<!-- Style Sheet for indented paragraphs                                             -->
+<style>
+    .indented { padding-left: 33pt; padding-right: 33pt; }
+</style>
+
+<!-- ################################################### -->
+<!-- Style Sheet for header image max size                                         -->
+<style>
+    img.Image { max-width: 750px;}
+</style>
+
+<!-- ################################################### -->
+<body background="Images/Background.png">
+<font face="Arial">
+
+<!-- ################################################### -->
+<!-- Header                                                                                           -->
+<!-- ################################################### -->
+<body bgcolor=#E6E6E6>
+
+<table width=100%>
+    <tr valign="TOP">
+        <td align="center">
+            <a href="index.html"><IMG SRC="Images/OREL-Logo-M.png" width="100%" class="Image"></a>
+        </td>
+    </td>
+</table>
+
+<table width="100%" border=0>
+    <col width="10%">
+    <col width="*">
+    <col width="10%">
+
+    <tr valign="bottom">
+        <td align="left">
+            <a href = "javascript:history.back()"><img src="Images/BackButton.png" width="25px"></a>
+        </td>
+        <td align="center" valign="top">
+            <font face= "Arial" size="6" color=#191970><b>
+            Design Standards
+            </b></font>
+        </td>
+        <td align="right">
+        </td>
+    </tr>
+</table>
+
+<hr>
+
+<!-- ################################################### -->
+<!-- Body                                                                                               -->
+<!-- ################################################### -->
+<body bgcolor=#E6E6E6>
+
+<p>The <b>Open Rose Engine Lathe</b> is designed around these criteria.
+
+<table width="100%">
+
+<tr><td>
+<hr class="style1">
+<!-- ################################################### -->
+<!-- Spindle                                                                                           -->
+<!-- ################################################### -->
+<p><font size="5" color=#191970><b>
+Overall Ideas
+</font></b>
+
+<table width="100%">
+    <col width="50%">
+    <col width="50%">
+    <tr valign="top">
+        <td>
+            <ol type="1" start="1">
+                <li>
+                    Easily available, off-the-shelf parts are to be used as much as possible.
+                </li>
+
+                <br>
+                <li>
+                    Where parts must be made, they need to be easily made by a person with reasonable machining skills.  <font color="red">(this probably needs more definition)</font>
+                </li>
+
+                <br>
+                <li>
+                    Where parts must be made, consideration shall be designed into the part which enables them to be 3D printed using <a href="https://www.raise3d.com/filaments/pla/" target="_new">PLA</a> or similar materials.
+                </li>
+
+                <br>
+                <li>
+                    The lathe's base will be made using 80/20 T-slot extruded aluminum.
+                </li>
+        </td>
+
+        <td>
+            <ol type="1" start="5">
+    	        <div style="float: right; width: 260px; margin: 0 0 5px 5px; padding: 0px; border: 1px solid black; text-align: center; background-color:White">
+	    	        <a href="Images/Axes-old.png" target="_new">
+		            <img src="Images/Axes-old.png" width="100%" />
+		            </a>
+		            <br>
+    		        <b>Lathe Axes</b>
+	    	        <br>
+		            <i><font size=2 color="gray">
+		            (click on image to see bigger versions)
+		            </font></i>
+    	        </div>
+
+                <li>
+                    A stepper motor will be used to drive the spindle.
+                </li>
+
+                <br>
+                <li>
+                    Stepper motors will be used to drive movement on the Z, X, and B axes.
+                </li>
+
+                <br>
+                <li>
+                    The <a href="https://mdfre2.colvintools.com/MSMCS.html" target="_new">Control System for Multiple Stepper Motors</a> will be used for the controls.
+                    
+                    <p style="margin-bottom: 0;">(This is the same as was used on the <a href="mdfre2.colvintools.com" target="_new">MDF Rose Engine Lathe 2.0</a>.)
+                </li>
+            </ol>
+        </td>
+
+    </tr>
+</table>
+
+</td></tr>
+<tr><td>
+<hr class="style1">
+<!-- ################################################### -->
+<!-- Spindle                                                                                           -->
+<!-- ################################################### -->
+<p><font size="5" color=#191970><b>
+Spindle
+</font></b>
+
+    <ol type="1">
+        <li>
+            Spindle diameter is 0.995&quot; &plusmn; 0.002&quot;.
+        </li>
+
+        <br>
+        <li>
+            Spindle nose (the inboard side) shall provide for work-holding using one of these formats:
+        </li>
+            <ol type="a">
+                <li>
+                    Morse taper #2
+                </li>
+                    <ol type="i">
+                        <li>
+                            Drawbar used  shall be <sup>3</sup>/<sub>8</sub>&quot;-16.
+                        </li>
+                    </ol>
+                <li>
+                    ER collet chuck
+                </li>
+                    <ol type="i">
+                        <li>
+                            ER-25 or
+                        </li>
+                        <li>
+                            ER-32
+                        </li>
+                    </ol>
+                <li>
+                    Threaded, 1&quot;-8.
+                </li>
+            </ol>
+            
+        <br>
+        <li>
+            Spindle rotation shall be designed for a maximum of 15 revolutions per minute (RPM).
+        </li>
+            
+        <br>
+        <li>
+            Spindle shall be held using either 
+        </li>
+            <ol type="i">
+                <li>
+                    linear bearings,
+                </li>
+                <li>
+                    ball or roller bearings, or
+                </li>
+                <li>
+                    self-lubricating bushings.
+                </li>
+            </ol>
+
+        <br>
+        <div style="float: right; width: 250px; margin: 5px 5px 5px 5px; padding: 5px; border: 1px solid Darkgray; text-align: center; background-color:White">            
+            <a href="Images/Spindle-Pulley.png" target="_new">
+            <img src="Images/Spindle-Pulley.png" width="100%" />
+            </a>
+            <font size=4><b>
+            Spindle-Pulley
+            </font></b>
+	    	<br>
+		    <i><font size=2 color="gray">
+		    (click on image to see bigger versions)
+		    </font></i>
+        </div>
+
+        <li>
+            Spindle shall be rotated using a drive pulley.  A 3D-printable version is available on GitHub at <a href="https://github.com/elfren/RoseEngine_SpindleAndAxis/tree/master/Hardware/GT2-5mm-108t" target="_new">https://github.com/elfren/RoseEngine_SpindleAndAxis/tree/master/Hardware/GT2-5mm-108t</a>.
+        </li>
+            <ol type="a">
+                <li>
+                    Diameter of the drive pulley shall be approximately 7&quot; (as outlined in the diagram to the right).
+                </li>
+                <li>
+                    Thickness of the drive pulley shall be <sup>3</sup>/<sub>4</sub>&quot;.
+                </li>
+                <li>
+                    The drive pulley shall be GT2 (5mm) pitch, enabling it to be driven using a timing belt.
+                </li>
+            </ol>
+
+        <br>
+        <li>
+            The drive pulley shall be affixed to the spindle shaft using a flange.
+        </li>
+            <ol type="a">
+                <li>
+                    The flange may be either fixed, or provision for crossing wheel functionality to allow for using a screw to change the angular alignment.
+                </li>
+                <li>
+                    In either case, the the flange shall be 1&quot; in thickness.
+                </li>
+            </ol>
+    </ol>
+
+</td></tr>
+<tr><td>
+<hr class="style1">
+<!-- ################################################### -->
+<!-- Rosettes                                                                                         -->
+<!-- ################################################### -->
+<p><font size="5" color=#191970><b>
+Rosettes
+</font></b>
+
+    <ol type="1">
+        <li>
+            The spindle shall be capable of utilizing 1, 2, or 3 rosettes:
+        </li>
+            <ol type="a">
+                <li>
+                    Up to 2 rosettes for rocking, and
+                </li>
+                <li>
+                    Up to 1 rosette for pumping.
+                </li>
+            </ol>
+        </li>
+
+        <br>
+        <li>
+            Rosettes shall have a nominal diameter of 7&quot;.
+        </li>
+
+        <br>
+        <li>
+            Rosettes shall have a spindle diameter of 1.00&quot;.
+        </li>
+    </ol>
+
+</td></tr>
+<tr><td>
+<hr class="style1">
+<!-- ################################################### -->
+<!-- Headstock                                                                                      -->
+<!-- ################################################### -->
+<p>
+<font size="5" color=#191970><b>
+Lathe Headstock
+</font></b>
+
+    <ol type="1">
+        <li>
+            Distance between the centerlines for the headstock's pivot point and the spindle shall be 12&quot;.
+        </li>
+
+        <br>
+        <li>
+        <b>
+            Spindle Rocking
+        </b>
+        </li>
+
+            <ol type="a">
+                <li>
+                    Spindle shall be capable of being rocked in an arc of 5&deg; (2.5&deg; to each side of a line drawn vertically from the pivot point).
+                </li>
+
+                <br>
+                <li>
+                    Spindle rocking shall be accomplished by affixing the headstock to pillow blocks using a <sup>1</sup>/<sub>2</sub>&quot; shaft.  These pillow blocks are attached to the lathe bed.
+                </li>
+            </ol>
+
+        <br>
+        <li>
+        <b>
+            Spindle Pumping
+        </b>
+        </li>
+
+            <ol type="a">
+                <li>
+                    Spindle shall be capable of being pumped with the lateral movement (along the Z axis) up to <sup>1</sup>/<sub>4</sub>&quot;.
+                </li>
+
+                <br>
+                <li>
+                    Spindle pumping shall be accomplished by moving the headstock along the bottom shaft.  Such movement shall be accomplished by using linear bearings in the pillow blocks.
+                </li>
+
+                <br>
+                <li>
+                    A spring shall be used to position the headstock towards the outboard side, and pumping shall move the headstock towards the inboard side.
+                </li>
+            </ol>
+    </ol>
+
+</td></tr>
+<tr><td>
+<hr class="style1">
+<!-- ################################################### -->
+<!-- Lathe Bed                                                                                       -->
+<!-- ################################################### -->
+<p><font size="5" color=#191970><b>
+    Lathe Bed
+</font></b>
+
+    <ol type="1">
+        <li>
+            Bed shall be metallic and capable of having items secured to it using magnetic switches.
+        </li>
+
+        <br>
+        <li>
+            Bed shall be at least 24&quot; x 24&quot;.
+        </li>
+
+        <br>
+        <li>
+            The bed will be designed so that it can be moved away from the headstock, providing a gap-bed configuration.
+        </li>
+    </ol>
+
+</td></tr>
+<tr><td>
+<hr class="style1">
+<!-- ################################################### -->
+<!-- Rubber Support for Rocking                                                           -->
+<!-- ################################################### -->
+<p>
+<div style="float: right; width: 250px; margin: 5px 5px 5px 5px; padding: 5px; border: 1px solid Darkgray; text-align: center; background-color:White">
+    <a href="Images/Rubber-AA.png" target="_new">
+    <img src="Images/Rubber-AA.png" width="100%" />
+    </a>
+    <font size=4><b>
+    Amplitude Adjuster
+    </font></b>
+	<br>
+	<i><font size=2 color="gray">
+	(click on image to see bigger versions)
+	</font></i>
+</div>
+
+<font size="5" color=#191970><b>
+    Rubber Support for Rocking
+</font></b>
+
+    <ol type="1">
+        <li>
+            Vertical amplitude adjusters shall be provisioned so that they are used whenever performing rocking activities.
+        </li>
+
+        <br>
+        <li>
+            Vertical amplitude adjusters shall be designed to be used on either the near or far side of the headstock.
+        </li>
+
+        <br>
+        <li>
+            Amplitude adjusters shall be designed so that there are separate lever arms for each of the two rosettes.
+        </li>
+
+        <br>
+        <li>
+            The lever arms shall be long enough to provide for amplitude adjustment up to 125%.
+        </li>
+
+        <br>
+        <li>
+            The AA rubbers (shown in red in the drawing to the right) used for each lever arm shall be independently adjustable, allowing for differing engagement of the rosette rubbers.
+        </li>
+
+        <br>
+        <li>
+            The AA rubbers shall be adjustable up or down for the full length of the lever arm.
+        </li>
+
+        <br>
+        <li>
+            The rosette rubbers (shown in blue in the drawing to the right) shall be printable using a 3D-printer, enabling the ornamental turner to create their own designs as desired.
+        </li>
+
+        <br>
+        <li>
+            Guides shall be provided for the lever arms to ensure the rosette rubbers stay engaged with their respective rosettes.
+        </li>
+
+    </ol>
+
+</td></tr>
+<tr><td>
+<hr class="style1">
+<!-- ################################################### -->
+<!-- Rubber Support for Pumping                                                         -->
+<!-- ################################################### -->
+<p>
+<font size="5" color=#191970><b>
+    Rubber Support for Pumping
+</font></b>
+
+    <ol type="1">
+        <li>
+        </li>
+    </ol>
+
+</td></tr>
+<tr><td>
+<hr class="style1">
+<!-- ################################################### -->
+<!-- Stepper Motors                                                                               -->
+<!-- ################################################### -->
+<p><font size="5" color=#191970><b>
+    Stepper Motors
+</font></b>
+
+    <ol type="1">
+        <li>
+        <div style="float: right; width: 210px; margin: 5px 5px 5px 5px; padding: 5px; border: 1px solid Darkgray; text-align: center; background-color:White">
+            <table>
+                <tr valign="bottom">
+                    <td colspan=999>
+                        <font color="darkblue" size=4><b>
+                        GX-16/4 Connectors
+                        </font></b>
+                    </td>
+                </tr>
+                <tr valign="bottom">
+                    <td>
+                        <a href="Images/GX-Plug.png" target="_new">
+                        <img src="Images/GX-Plug.png" width="100%" />
+                        </a>
+                        <b>GX Plug</b>
+                    </td>
+                    <td>
+                        <a href="Images/GX-Jack.png" target="_new">
+                        <img src="Images/GX-Jack.png" width="100%" />
+                        </a>
+                        <b>GX Jack</b>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+            Stepper motors are connected to the associated control mechanism using 16mm, GX/16-4 connectors.  
+            
+            <p style="margin-bottom: 0;">GX-style connectors are available at a reasonable cost from many sources, and they are threaded so that the plug has little chance of being pulled out of the jack unintentionally.
+        </li>
+
+        <br>
+        <li>
+            The cable connections are
+
+            <br>
+            <br>
+            <table border=1>
+                <tr bgcolor="Moccasin" valign="bottom">
+                    <td align="center" width="75px">
+                        <img src="Images/GX-Plug.png" width="100%" />
+                        <font color=#191970><b>
+                        GX-16/4
+                        <br>
+                        Plug
+                        <br>
+                        Pin
+                        </font></b<
+                    </td>
+                    <td align="center" width="75px">
+                        <font color=#191970><b>
+                        Stepper
+                        <br>
+                        Wire
+                        </font></b<
+                    </td>
+                    <td width="25px"  bgcolor="black">
+                    </td>
+                    <td align="center" width="75px">
+                        <font color=#191970><b>
+                        Control 
+                        <br>
+                        Board
+                        </font></b>
+                    </td>
+                    <td align="center" width="75px">
+                        <img src="Images/GX-Jack.png" width="100%" />
+                        <font color=#191970><b>
+                        GX-16/4
+                        <br>
+                        Jack
+                        <br>
+                        Pin
+                        </font></b<
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td align="center">
+                        1
+                    </td>
+                    <td align="center">
+                        A+
+                    </td>
+                    <td  bgcolor="black" align="center">
+                        <font color="white"><b>
+                            &#8660;
+                        </b></font>
+                    </td>
+                    <td align="center">
+                        A+
+                    </td>
+                    <td align="center">
+                        1
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td align="center">
+                        2
+                    </td>
+                    <td align="center">
+                        A-
+                    </td>
+                    <td  bgcolor="black" align="center">
+                        <font color="white"><b>
+                            &#8660;
+                        </b></font>
+                    </td>
+                    <td align="center">
+                        A-
+                    </td>
+                    <td align="center">
+                        2
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td align="center">
+                        3
+                    </td>
+                    <td align="center">
+                        B+
+                    </td>
+                    <td  bgcolor="black" align="center">
+                        <font color="white"><b>
+                            &#8660;
+                        </b></font>
+                    </td>
+                    <td align="center">
+                        B+
+                    </td>
+                    <td align="center">
+                        3
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td align="center">
+                        4
+                    </td>
+                    <td align="center">
+                        B-
+                    </td>
+                    <td  bgcolor="black" align="center">
+                        <font color="white"><b>
+                            &#8660;
+                        </b></font>
+                    </td>
+                    <td align="center">
+                        B-
+                    </td>
+                    <td align="center">
+                        4
+                    </td>
+                </tr>
+                
+            </table>
+        </li>
+
+        <br>
+        <li>
+            GX-16 plugs are used on the stepper motor connector cables.
+        </li>
+
+        <br>
+        <li>
+            GX-16 jacks are used on the controls box.
+        </li>
+    </ol>
+
+</td></tr>
+<tr><td>
+<hr class="style1">
+<!-- ################################################### -->
+<!-- HMI Displays                                                                                  -->
+<!-- ################################################### -->
+<p><font size="5" color=#191970><b>
+    HMI Display
+</font></b>
+
+    <ol type="1">
+        <div style="float: right; width: 210px; margin: 5px 5px 5px 5px; padding: 5px; border: 1px solid Darkgray; text-align: center; background-color:White">
+            <table>
+                <tr valign="bottom">
+                    <td colspan=999>
+                        <font color="darkblue" size=4><b>
+                        GX-12/4 Connectors
+                        </font></b>
+                    </td>
+                </tr>
+                <tr valign="bottom">
+                    <td>
+                        <a href="Images/GX-Plug.png" target="_new">
+                        <img src="Images/GX-Plug.png" width="100%" />
+                        </a>
+                        <b>GX Plug</b>
+                    </td>
+                    <td>
+                        <a href="Images/GX-Jack.png" target="_new">
+                        <img src="Images/GX-Jack.png" width="100%" />
+                        </a>
+                        <b>GX Jack</b>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <li>
+            The HMI display (when appropriate) is connected to the associated control mechanism using 12mm, GX/12-4 connectors.  
+            
+            <p style="margin-bottom: 0;">These are a different size than the stepper motor connector to prevent the user connecting the HMI into a stepper motor jack.
+        </li>
+
+        <br>
+        <li>
+            The cable connections are
+
+            <br>
+            <br>
+            <table border=1>
+                <tr bgcolor="Moccasin" valign="bottom">
+                    <td align="center" width="75px">
+                        <img src="Images/GX-Plug.png" width="100%" />
+                        <font color=#191970><b>
+                        GX-12/4
+                        <br>
+                        Plug
+                        <br>
+                        Pin
+                        </font></b>
+                    </td>
+                    <td align="center" width="75px">
+                        <font color=#191970><b>
+                        HMI
+                        <br>
+                        Wire
+                        </font></b>
+                    </td>
+                    <td width="25px"  bgcolor="black">
+                    </td>
+                    <td align="center" width="75px">
+                        <font color=#191970><b>
+                        Control 
+                        <br>
+                        Board
+                        </font></b>
+                    </td>
+                    <td align="center" width="75px">
+                        <img src="Images/GX-Jack.png" width="100%" />
+                        <font color=#191970><b>
+                        GX-12/4
+                        <br>
+                        Jack
+                        <br>
+                        Pin
+                        </font></b>
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td align="center">
+                        1
+                    </td>
+                    <td align="center">
+                        Rx
+                    </td>
+                    <td  bgcolor="black" align="center">
+                        <font color="white"><b>
+                            &#8660;
+                        </b></font>
+                    </td>
+                    <td align="center">
+                        Tx
+                    </td>
+                    <td align="center">
+                        1
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td align="center">
+                        2
+                    </td>
+                    <td align="center">
+                        +5V
+                    </td>
+                    <td  bgcolor="black" align="center">
+                        <font color="white"><b>
+                            &#8660;
+                        </b></font>
+                    </td>
+                    <td align="center">
+                        +5V
+                    </td>
+                    <td align="center">
+                        2
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td align="center">
+                        3
+                    </td>
+                    <td align="center">
+                        Tx
+                    </td>
+                    <td  bgcolor="black" align="center">
+                        <font color="white"><b>
+                            &#8660;
+                        </b></font>
+                    </td>
+                    <td align="center">
+                        Rx
+                    </td>
+                    <td align="center">
+                        3
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td align="center">
+                        4
+                    </td>
+                    <td align="center">
+                        GND
+                    </td>
+                    <td  bgcolor="black" align="center">
+                        <font color="white"><b>
+                            &#8660;
+                        </b></font>
+                    </td>
+                    <td align="center">
+                        GND
+                    </td>
+                    <td align="center">
+                        4
+                    </td>
+                </tr>
+                
+            </table>
+        </li>
+
+        <br>
+        <li>
+            GX-12 plugs are used on the HMI display connector cable.
+        </li>
+
+        <br>
+        <li>
+            GX-12 jacks are used on the controls box.
+        </li>
+    </ol>
+
+</td></tr>
+<tr><td>
+<hr class="style1">
+<!-- ################################################### -->
+<!-- Limit Switches                                                                                 -->
+<!-- ################################################### -->
+<p><font size="5" color=#191970><b>
+    Limit Switches
+</font></b>
+
+    <ol type="1">
+        <div style="float: right; width: 310px; margin: 5px 5px 5px 5px; padding: 5px; border: 1px solid Darkgray; text-align: center; background-color:White">
+            <table>
+                <tr valign="bottom">
+                    <td colspan=999>
+                        <font color="darkblue" size=4><b>
+                        3.5mm Audo Connectors
+                        </font></b>
+                    </td>
+                </tr>
+                <tr valign="bottom">
+                    <td>
+                        <a href="Images/3.5mm-Plug.png" target="_new">
+                        <img src="Images/3.5mm-Plug.png" width="100%" />
+                        </a>
+                        <b>3.5mm Plug</b>
+                    </td>
+                    <td>
+                        <a href="Images/3.5mm-Jack.png" target="_new">
+                        <img src="Images/3.5mm-Jack.png" width="100%" />
+                        </a>
+                        <b>3.5mm Jack</b>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <li>
+            Limit switches used are normally open/momentary close.  When closed, the designated pin is shorted to GND.
+        </li>
+
+        <br>
+        <li>
+            3.5mm audio plugs are used on the connector cable from the limit switch.
+        </li>
+
+        <br>
+        <li>
+            3.5mm audio jacks are used on the controls box.
+        </li>
+
+        </li>
+
+        <br>
+        <li>
+            The cable connections are
+
+            <br>
+            <br>
+            <table border=1>
+                <tr bgcolor="Moccasin" valign="bottom">
+                    <td align="center" width="75px">
+                        <font color=#191970><b>
+                        Control
+                        <br>
+                        Board
+                        </font></b<
+                    </td>
+                    <td align="center" width="75px">
+                        <font color=#191970><b>
+                        3.5mm
+                        <br>
+                        Pin
+                        </font></b<
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td align="center">
+                        Pin #
+                    </td>
+                    <td align="center">
+                        Tip
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td align="center">
+                        GND
+                    </td>
+                    <td align="center">
+                        Sleeve
+                    </td>
+                </tr>
+                
+            </table>
+        </li>
+
+    </ol>
+</td></tr>
+</table>
+
+<!-- ################################################### -->
+<!-- Footer                                                                                             -->
+<!-- ################################################### -->
+<hr>
+<center>
+    <font size="3">
+    <a href="index-About.html">About this Project</a>
+    </font>
+</center>
+
+<font size="2">
+<p style="margin-bottom: 0;"><i><b>Disclaimer:</b></i>
+ The process of woodturning involves the use of tools, machinery and materials which could cause injury or be a health hazard unless proper precautions are taken, including the wearing of appropriate protective equipment. Safety measures should be followed to protect yourself and those in your shop. Be sure to read and follow all instructions from the manufacturer, and and utilize proper safety equipment. Never consume alcohol or anything that could impair your judgement before using tools. 
+
+</body>
+</html>
